@@ -1,0 +1,55 @@
+cd "C:\Ronils stuff\College\Year 1\SEM-2\CA\EXTRA ASSIGNMENT\SUPERSCALAR MIPS"
+iverilog -g2012 -o mips_ss_sim mips_ss_tb.sv mips_ss.sv
+vvp mips_ss_sim
+
+
+test case 1
+addi $16, $0, 3	       	20100003
+addi $17, $0, 4		20110004	
+add $18, $16, $17	02119020	
+sw $18, 84($0)		ac120054	
+j 0			08000000	
+
+
+test case 2
+addi $16, $0, 10	2010000a
+addi $17, $0, 20	20110014
+addi $18, $0, 30	2012001e
+addi $19, $0, 40	20130028
+
+
+test case 3
+addi $16, $0, 5	        20100005
+add $17, $16, $16	02108820
+add $18, $17, $17	02319020
+sw $18, 84($0)		ac120054
+
+
+test case 4
+addi $16, $0, 1		20100001
+addi $17, $0, 1		20110001
+beq $16, $17, 2		12110002
+addi $18, $0, 99	20120063
+sw $16, 84($0)		ac100054
+
+
+
+clk
+pc_f
+instr_f
+instr_da
+instr_db
+issue_b
+rd1a_d / rd1b_d
+aluouta_e
+aluoutb_e
+memwrite_m
+dataadr	
+writedata
+regwrite_wa
+regwrite_wb
+pcsrc_d
+
+
+
+
